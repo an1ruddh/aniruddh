@@ -47,7 +47,7 @@ printf("\n");
 void main()
 {
 int choice,ele;
-printf("1.push\n2.pop\n3.size\n4.display\n5.exit\n") ;
+printf("1.push\n2.pop\n3.peek\n4.display\n5.exit\n") ;
 while(1){
 printf("Enter your choice: ");
 scanf("%d",&choice);
