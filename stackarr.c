@@ -1,79 +1,68 @@
-#include <stdio.h>
-#define n 5  
-int stack[n] , top = -1, i  ; 
-
-void push(int element) ; 
-int pop() ; 
-int peep() ; 
-void display() ; 
-
-
-
-void push(int element){
-	if(top == (n-1)) 
-	printf("Stack overflow\n") ; 
-	else{
-		top = top + 1 ; 
-		stack[top] = element; 
-		printf("Element is inserted \n") ; 
-	}
-} 
-
-
-int pop(){
-	int x ; 
-	if(top == -1) {
-		printf("Underflow \n") ; 
-	}else{
-x = stack[top] ; 
-		top-- ; 
-		return x ; 
-		
-	}
+#include<stdio.h>
+#include<stdlib.h>
+#define ss 3
+int mstack[3],top=-1;
+void push(int ele)
+{
+if(top==ss-1)
+{
+printf("Stack is full\n");
+return;
 }
-
-int peep(){
-	if(top == -1) {
-		printf("Underflow \n") ;
-	}
-		 	
-	else{
-		return stack[top] ; 
-	}
-		
+top++;
+mstack[top]=ele;
+printf("Element pushed inside is %d\n",mstack[top]);
 }
-
-
-void display(){
-		if(top == -1) {
-		printf("Underflow \n") ;
-	}
-		else{
-			for(i=top; i>=0;i--)
-				printf("Element: %d\n", stack[i]) ; 
-		}
+int pop()
+{
+if(top==-1)
+{
+printf("Stack is empty\n");
+return -1;
 }
-
-
-int main() {
-	
-	int choice , i ; 
-	do{	printf("Enter your choice 1.push 2.pop 3.display 4.Peep\n") ; 
-		scanf("%d",&choice) ; 
-		switch(choice){
-			case 1: 
-					if(top == (n-1)) printf("Cant insert\n") ; 
-					else{
-					printf("Enter the element\n") ; 
-					scanf("%d",&i) ; 
-					push(i) ; }
-					break ; 
-			case 2: printf("Popped element = %d\n", pop()) ; break ; 
-			case 3: display() ; break;  
-			case 4: printf("Top most element = %d\n", peep()); break; 
-		}
-	}while(choice!=5) ; 
-	
-	
-	return 0 ; 
+int ele = mstack[top];
+top--;
+printf("Element popped is %d\n",ele);
 }
+void size()
+{
+printf("Size of the stack is %d\n",top+1);
+}
+void display()
+{
+int i;
+printf("Elements are: ");
+for(i=0;i<=top;i++){
+printf("%d ",mstack[i]);
+}
+printf("\n");
+}
+void main()
+{
+int choice,ele;
+printf("1.push\n2.pop\n3.size\n4.display\n5.exit\n") ;
+while(1){
+printf("Enter your choice: ");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:
+printf("Enter the element to push into the stack: ");
+scanf("%d",&ele);
+push(ele);
+break;
+case 2:
+pop();
+break;
+case 3:
+size();
+break;
+case 4:
+display();
+break;
+case 5:
+exit(0);
+}
+}
+}
+O
