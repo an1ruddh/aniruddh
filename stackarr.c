@@ -24,9 +24,16 @@ int ele = mstack[top];
 top--;
 printf("Element popped is %d\n",ele);
 }
-void size()
+void peek()
 {
-printf("Size of the stack is %d\n",top+1);
+if(top==-1)
+{
+  printf("stack is empty");
+  return -1;
+}
+  else{
+printf("%d",mstack[top]);
+  }
 }
 void display()
 {
@@ -55,7 +62,7 @@ case 2:
 pop();
 break;
 case 3:
-size();
+peek();
 break;
 case 4:
 display();
