@@ -19,14 +19,14 @@ bool isEmpty(){
 void push(int element){
 	struct node *top = (struct node*) 
 	malloc(sizeof(struct node)) ; 
-	if(isEmpty()){ // case 1 
+	if(isEmpty()){ 
 		printf("Insert Not possible\n") ; 
 	}else if(head == NULL){ // first element case 2 
 		printf("First element\n") ; 
 		top->info = element ; 
 		top->next = NULL ; 
 		head = top ; 
-	}else{ // stack is not empty  case 3 
+	}else{ 
 		top->info = element ; 
 		top->next = head ; 
 		head = top ; 
