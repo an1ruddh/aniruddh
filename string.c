@@ -1,4 +1,25 @@
 #include<stdio.h>
+#include <stdio.h>
+int serachsstr( char *, char *);
+int main()
+{ char s1[] = "Happy";
+  char s2[]= "appy";
+  printf("%d\n", searchsstr(s1,s2));
+  return 0;
+}
+
+int searchsstr (char *s, char *ss)
+{   int len1=0, len2=0; int start,j;
+    while(*(s+len1) != '\0') len1++; 
+    for (start=0; start <= (len1 - len2); start++)
+    { 
+     for (j=0; j < len2; j++)
+     if (*(s+start+j) != *(ss+j)) break;
+     if (j == len2) return start;
+     return -1;    
+    
+}
+
 
 void strcopy(char *s1,char *s2)
 {
@@ -58,7 +79,7 @@ gets(s1);
 gets(s2);
 strcopy(t1,s1);
 
-printf("\n1.strcomp\n2.strcopy\n3.strconcat\n4.Sting reverse\n");
+printf("\n1.strcomp\n2.strcopy\n3.strconcat\n4.Sting reverse\n5.String search\n");
 for(;;)
 {
  printf("enter your choice\n");
@@ -93,6 +114,7 @@ for(;;)
  Strreverse(s1);
  printf("s2=%s\n",s1);
  break;
+case 5: searchsstr( char *, char *);
  default: return;
  }
 }
