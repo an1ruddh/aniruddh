@@ -1,12 +1,6 @@
 #include<stdio.h>
 #include <stdio.h>
-int serachsstr( char *, char *);
-int main()
-{ char s1[] = "Happy";
-  char s2[]= "appy";
-  printf("%d\n", searchsstr(s1,s2));
-  return 0;
-}
+
 
 int searchsstr (char *s, char *ss)
 {   int len1=0, len2=0; int start,j;
