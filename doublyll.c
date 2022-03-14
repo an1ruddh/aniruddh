@@ -178,3 +178,26 @@ void display()
         ptr=ptr->next;  
     }  
 }   
+void reverseList()
+{
+    struct node *current, *temp;
+
+    current = head;
+    while(current != NULL)
+    {
+       
+       
+        temp = current->next;
+        current->next = current->prev;
+        current->prev = temp;
+ 
+        current = temp;
+    }
+    
+    
+    temp = head;
+    head = last;
+    last = temp;
+
+    printf("LIST REVERSED SUCCESSFULLY.\n");
+}
