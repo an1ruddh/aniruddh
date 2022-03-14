@@ -65,7 +65,7 @@ for(;;)
  scanf("%d",&choice);
  switch(choice)
  {
- case 1: strcopy(s1,t1);
+ case 1: strcomp(s1,t1);
  result=strcomp(s1,s2);
  if(result>0)
  printf("%s is greater than %s\n",s1,s2);
@@ -79,12 +79,12 @@ for(;;)
  strcopy(s1,s2);
  printf("after copying, s1= %s\t, s2= %s\n",s1,s2);
  break;
- case 3: strcopy(s1,t1);
+ case 3: strconcat(s1,t1);
  printf("strings before concatenation, s1=%s\t , s2=%s\n",s1,s2);
  strconcat(s1,s2);
  printf("after concatenation, s1= %s\t , s2= %s\n",s1,s2);
  break;
- case 4: strcopy(s1,t1);
+ case 4: strreverse(s1,t1);
  printf("strings before reversing, s1=%s\t , s2=%s\n",s1,s2);
  printf(" strings after reversing\n");
  Strreverse(s1);
